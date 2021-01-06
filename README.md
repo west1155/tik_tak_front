@@ -16,7 +16,7 @@ To get the project up and running, and view components in the browser, complete 
 
 Download and install Node: https://nodejs.org/
 Clone this repo: git clone https://github.com/west1155/tik_tak_back.git (HTTPS) and inside root to the folder tik_tak https://github.com/west1155/tik_tak_front.git (HTTPS)
-Install project dependancies: npm install
+Install project dependancies: npm install,
 Start the development environment: npm start
 Open your browser and visit http://localhost:1111
 
