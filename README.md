@@ -24,3 +24,4 @@ Open your browser and visit http://localhost:1111
 # Testing:
 
 Cypress is been used for testing:
+Cypress and open test_spec.js tpo ru the test
