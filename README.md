@@ -23,15 +23,4 @@ Open your browser and visit http://localhost:1111
 
 # Testing:
 
-Go to page "https://localhost:1111"
-
-Check what player's turn:
-if it is 'X':
-
-Click on one of the cells
-The X should appear on that cell.
-
-if it is 'O':
-
-Click on one of the cells
-The O should appear on that cell.
+Cypress is been used for testing:
