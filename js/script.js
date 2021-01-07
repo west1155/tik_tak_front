@@ -9,6 +9,7 @@ Post data
 
 
 theUrl = "http://localhost:1111/items";
+cleanArrayUrl = "http://localhost:1111/clean_array";
 
 const statusDisplay = document.querySelector('.game--status');
 const logging = document.querySelector('.game--log');
@@ -16,11 +17,9 @@ let gameActive = true;
 var gameState = ["", "", "", "", "", "", "", "", ""];
 let arrayOfplayers = ["", "", "", "", "", "", "", "", ""];
 let arrayOfloc = ["", "", "", "", "", "", "", "", ""];
-let currentPlayer = "X";
+var currentPlayer = 'X';
 
-
-
-
+console.log(getRequest());
 //var div = document.querySelector('.game--container');
 //var diva = document.querySelector('.game--log');
 //while(div.firstChild) {
@@ -173,6 +172,7 @@ function handleRestartGame() {
     clearScreenAndArrays();
     gameState = ["", "", "", "", "", "", "", "", ""];
     statusDisplay.innerHTML = currentPlayerTurn();
+    fetch(cleanArrayUrl);
     document.querySelectorAll('.cell')
         .forEach(cell => cell.innerHTML = "");
 }
@@ -208,6 +208,8 @@ function postRequest(clicked) {
 
 
 
+
+
 function getRequest() {
     fetch(theUrl)
         .then(res => {
@@ -217,9 +219,10 @@ function getRequest() {
             clearScreenAndArrays();
             var div = document.querySelector('.game--log');
             logging.innerHTML = "<ul>"
-            data.forEach(element => logging.innerHTML +="<li>"+ "Player " + (element.player) + " moved to " + (Number(element.id)+1))+"</li>";
+            data.f
+            data.forEach(element => gameState[Number(element.id)]=String(element.player));orEach(element => logging.innerHTML +="<li>"+ "Player " + (element.player) + " moved to " + (Number(element.id)+1))+"</li>";
             logging.innerHTML += "</ul>"
-            data.forEach(element => gameState[Number(element.id)]=String(element.player));
+            console.log(gameState);
         });
 
     return gameState;
